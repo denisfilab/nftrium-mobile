@@ -1,5 +1,7 @@
 # README.md
 
+# Tugas 7
+
 ## 1. Stateless Widget dan Stateful Widget
 
 **Stateless Widget** adalah widget yang tidak menyimpan atau mengelola keadaan (state) internal. Mereka bersifat immutable, artinya ketika dibuat, mereka tidak dapat berubah. Contoh penggunaannya adalah widget yang menampilkan teks atau ikon yang statis dan tidak berubah selama siklus hidup aplikasi.
@@ -64,6 +66,5 @@ Untuk menggunakan font Poppins, saya menambahkan dependensi `google_fonts` di `p
 - **SnackBar untuk Umpan Balik Pengguna:** Ketika tombol ditekan, `SnackBar` atau semacam toast ditampilkan untuk memberikan feedback
 
 - **Scroll** `SingleChildScrollView` memastikan bahwa konten dapat discroll jika melebihi ukuran layar atau sama saja dengan memberikan styling overflow pada konten.
-
 
 
