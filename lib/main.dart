@@ -22,8 +22,10 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 24.0),
-            textStyle: const TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+            padding:
+                const EdgeInsets.symmetric(vertical: 16.0, horizontal: 24.0),
+            textStyle:
+                const TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12.0),
             ),
@@ -31,7 +33,8 @@ class MyApp extends StatelessWidget {
         ),
       ),
       home: const MyHomePage(),
-      debugShowCheckedModeBanner: false,=
+      debugShowCheckedModeBanner: false,
+    );
   }
 }
 
@@ -83,7 +86,6 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-       
                 Icon(
                   Icons.vpn_key,
                   size: 100,
@@ -94,7 +96,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   width: double.infinity,
                   child: ElevatedButton.icon(
                     onPressed: () {
-                      _showSnackbar("Kamu telah menekan tombol Lihat Daftar NFT");
+                      _showSnackbar(
+                          "Kamu telah menekan tombol Lihat Daftar NFT");
                     },
                     icon: const Icon(Icons.list_alt, size: 24),
                     label: const Text('Lihat Daftar NFT'),
@@ -148,54 +151,17 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 const SizedBox(height: 40),
-              
+
                 Text(
-                  'Empower your digital assets with NFTrium',
+                  'NFTrium',
                   textAlign: TextAlign.center,
                   style: GoogleFonts.poppins(
                     fontSize: 16.0,
-                    color: Colors.white70,
+                    color: Colors.purple[900],
                   ),
                 ),
               ],
             ),
-          ),
-        ),
-      ),
-      bottomNavigationBar: BottomAppBar(
-        color: Colors.blueAccent,
-        elevation: 8.0,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: <Widget>[
-              IconButton(
-                icon: const Icon(Icons.home, color: Colors.white),
-                onPressed: () {
-                  _showSnackbar("Home");
-                },
-              ),
-              IconButton(
-                icon: const Icon(Icons.search, color: Colors.white),
-                onPressed: () {
-                  _showSnackbar("Search");
-                },
-              ),
-              IconButton(
-                icon: const Icon(Icons.favorite, color: Colors.white),
-                onPressed: () {
-                  _showSnackbar("Favorites");
-                },
-              ),
-              IconButton(
-                icon: const Icon(Icons.person, color: Colors.white),
-                onPressed: () {
-                  _showSnackbar("Profile");
-
-                },
-              ),
-            ],
           ),
         ),
       ),
