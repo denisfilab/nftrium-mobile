@@ -33,7 +33,7 @@ Beberapa widget yang digunakan dalam proyek ini beserta fungsinya adalah:
 
 **Fungsi setState():** Digunakan dalam `StatefulWidget` untuk memberi tahu Flutter bahwa ada perubahan dalam state yang memerlukan pembaruan UI. Ketika `setState()` dipanggil, Flutter akan membangun ulang widget dengan state terbaru untuk memperbarui tampilan.
 
-**Variabel yang Terpengaruh:** Variabel yang berada dalam kelas state (misalnya, `_MyHomePageState`) yang mempengaruhi tampilan UI akan terdampak. Dalam kode di atas, meskipun tidak ada variabel state yang diubah, jika ada variabel seperti daftar NFT atau status login yang diubah, pemanggilan `setState()` akan memastikan UI diperbarui sesuai dengan perubahan tersebut.
+**Variabel yang Terpengaruh:** Variabel yang berada dalam kelas state (misalnya, `_MyHomePageState`) yang mempengaruhi tampilan UI akan terdampak. Meskipun tidak ada variabel state yang diubah, jika ada variabel seperti daftar NFT atau status login yang diubah, pemanggilan `setState()` akan memastikan UI diperbarui sesuai dengan perubahan tersebut.
 
 ## 4. Perbedaan antara const dan final
 - **const:** Menandakan bahwa nilai sebuah variabel adalah konstan dan diketahui saat compile time. Nilai yang ditandai dengan `const` tidak dapat diubah.
