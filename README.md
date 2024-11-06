@@ -31,7 +31,7 @@ Beberapa widget yang digunakan dalam proyek ini beserta fungsinya adalah:
 
 ## 3. Fungsi setState() dan Variabel yang Terpengaruh
 
-**Fungsi setState():** Digunakan dalam `StatefulWidget` untuk memberi tahu Flutter bahwa ada perubahan dalam state yang memerlukan pembaruan UI. Ketika `setState()` dipanggil, Flutter akan memanggil metode `build()` kembali untuk memperbarui tampilan berdasarkan state terbaru.
+**Fungsi setState():** Digunakan dalam `StatefulWidget` untuk memberi tahu Flutter bahwa ada perubahan dalam state yang memerlukan pembaruan UI. Ketika `setState()` dipanggil, Flutter akan membangun ulang widget dengan state terbaru untuk memperbarui tampilan.
 
 **Variabel yang Terpengaruh:** Variabel yang berada dalam kelas state (misalnya, `_MyHomePageState`) yang mempengaruhi tampilan UI akan terdampak. Dalam kode di atas, meskipun tidak ada variabel state yang diubah, jika ada variabel seperti daftar NFT atau status login yang diubah, pemanggilan `setState()` akan memastikan UI diperbarui sesuai dengan perubahan tersebut.
 
