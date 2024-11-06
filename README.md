@@ -63,7 +63,7 @@ Untuk menggunakan font Poppins, saya menambahkan dependensi `google_fonts` di `p
 
 - **Button** Menggunakan `ElevatedButton.icon` untuk membuat tombol yang memiliki icon dan label
 
-- **SnackBar untuk Umpan Balik Pengguna:** Ketika tombol ditekan, `SnackBar` atau semacam toast ditampilkan untuk memberikan feedback
+- **SnackBar untuk Feedback:** Ketika tombol ditekan, `SnackBar` atau semacam toast ditampilkan untuk memberikan feedback
 
 - **Scroll** `SingleChildScrollView` memastikan bahwa konten dapat discroll jika melebihi ukuran layar atau sama saja dengan memberikan styling overflow pada konten.
 
