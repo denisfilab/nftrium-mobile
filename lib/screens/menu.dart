@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:nftrium_mobile/screens/login.dart';
 import 'package:nftrium_mobile/screens/nftentry_form.dart';
+import 'package:nftrium_mobile/screens/list_nftentry.dart'; // Ensure this path is correct
 import 'package:nftrium_mobile/widgets/left_drawer.dart';
+import 'package:pbp_django_auth/pbp_django_auth.dart';
+import 'package:provider/provider.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -28,8 +32,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final request = context.watch<CookieRequest>();
+
     return Scaffold(
-      // AppBar with Typography-Based Logo
       appBar: AppBar(
         backgroundColor: Colors.deepPurple,
         elevation: 0,
@@ -43,9 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         centerTitle: true,
       ),
-
       drawer: const LeftDrawer(),
-
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
@@ -70,8 +73,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   width: double.infinity,
                   child: ElevatedButton.icon(
                     onPressed: () {
-                      _showSnackbar(
-                          "Kamu telah menekan tombol Lihat Daftar NFT");
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const NftEntryPage()),
+                      );
                     },
                     icon: const Icon(Icons.list_alt,
                         size: 24, color: Colors.white),
@@ -118,8 +124,29 @@ class _MyHomePageState extends State<MyHomePage> {
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton.icon(
-                    onPressed: () {
-                      _showSnackbar("Kamu telah menekan tombol Logout");
+                    onPressed: () async {
+                      final response = await request
+                          .logout("http://127.0.0.1:8000/auth/logout/");
+                      String message = response["message"];
+                      if (context.mounted) {
+                        if (response['status']) {
+                          String uname = response["username"];
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text("$message Sampai jumpa, $uname."),
+                          ));
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const LoginPage()),
+                          );
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text(message),
+                            ),
+                          );
+                        }
+                      }
                     },
                     icon:
                         const Icon(Icons.logout, size: 24, color: Colors.white),
@@ -135,7 +162,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 const SizedBox(height: 40),
-
                 Text(
                   'NFTrium',
                   textAlign: TextAlign.center,
