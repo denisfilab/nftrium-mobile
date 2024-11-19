@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nftrium_mobile/screens/list_nftentry.dart';
 import 'package:nftrium_mobile/screens/menu.dart';
 import 'package:nftrium_mobile/screens/nftentry_form.dart';
 
@@ -58,6 +59,16 @@ class LeftDrawer extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                     builder: (context) => const NftEntryFormPage()),
+              );
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.add_reaction_rounded),
+            title: const Text('Daftar NFT'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const NftEntryPage()),
               );
             },
           ),
